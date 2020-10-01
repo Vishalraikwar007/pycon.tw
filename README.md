@@ -18,11 +18,11 @@ This repository serves the website of PyCon TW, Python Conference Taiwan. This p
 
 #### Database - Docker (Optional)
 
-Write database password in .env:
+Write database password in .env :
 
     POSTGRES_PASSWORD=somepassword
 
-Define .env location in docker-compose-dev.yml under the corresponding database service:
+Define .env location in docker-compose-dev.yml under the corresponding database service :
 
     services:
       db:
@@ -30,13 +30,13 @@ Define .env location in docker-compose-dev.yml under the corresponding database 
         env_file:
           - .env
 
-Create and start the database for development:
+Create and start the database for development :
 
     docker-compose -f docker-compose-dev.yml up
 
 #### Python - Built-in `venv`
 
-Create your virtual environment:
+Create your virtual environment :
 
     python3 -m venv venv
 
@@ -46,7 +46,7 @@ And enable it:
 
 #### Python - [virtualenvwrapper](https://virtualenvwrapper.readthedocs.org)
 
-You need to specify your python path when creating the virtual environment:
+You need to specify your python path when creating the virtual environment :
 
     mkvirtualenv --python=$(which python3) pycontw2016
 
@@ -58,11 +58,11 @@ Switch to version specified in `.nvmrc`:
 
 ### Install Dependencies
 
-Use pip to install Python depedencies:
+Use pip to install Python depedencies :
 
     pip install -r requirements.txt
 
-Use Yarn to install Node dependencies:
+Use Yarn to install Node dependencies :
 
     yarn install --dev
 
@@ -76,7 +76,7 @@ Then edit the `SECRET_KEY` line in `local.env`, replacing `{{ secret_key }}` int
 
     SECRET_KEY=twvg)o_=u&@6^*cbi9nfswwh=(&hd$bhxh9iq&h-kn-pff0&&3
 
-If you’re using a database for the first time, create a database named `pycontw2016` owned by the database user specified in the env file:
+If you’re using a database for the first time, create a database named `pycontw2016` owned by the database user specified in the env file :
 
 > Enter pycontw_db_1 container
 ```cmd
@@ -92,7 +92,7 @@ After that, just run the migration.
 
 ### Get Ready for Development
 
-`cd` into the `src` directory:
+`cd` into the `src` directory :
 
     cd src
 
@@ -104,7 +104,7 @@ Copy `local.sample.env` and change its parameters to your personal setting.
 
 The format of `local.env` will be used by `django-environ` so you may refer to https://github.com/joke2k/django-environ for more details.
 
-And migrate the database:
+And migrate the database :
 
     python manage.py migrate
 
@@ -133,14 +133,14 @@ Run the following command inside `src`:
 
     pytest
 
-To run tests with coverage report:
+To run tests with coverage report :
 
     pytest --cov=.
 
 
 ### Testing with Tox
 
-Run the following inside the top-level directory (the one with `tox.ini`):
+Run the following inside the top-level directory (the one with `tox.ini`) :
 
     tox
 
